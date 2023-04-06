@@ -5,14 +5,22 @@ import (
 	"os"
 )
 
+func hello(sr *string) (result string) {
+	if sr == nil || *sr == "" {
+		result = "hello world"
+	} else {
+		result = fmt.Sprintf("hello %s", *sr)
+	}
+	return
+}
+
 func main() {
 	args := os.Args
 	if len(args) > 1 {
-		fmt.Println(" hello :")
 		for _, a := range args[1:] {
-			fmt.Printf("\t %s \n", a)
+			fmt.Println(hello(&a))
 		}
 	} else {
-		fmt.Println("hello world")
+		fmt.Println(hello(nil))
 	}
 }
