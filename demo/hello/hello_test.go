@@ -9,24 +9,24 @@ import (
 
 func Test_hello(t *testing.T) {
 	expect := "hello world"
-	if hello(nil) != expect {
+	if Hello(nil) != expect {
 		t.Errorf("failed, expect: %s", expect)
 	}
 
 	empty := ""
-	if hello(&empty) != expect {
+	if Hello(&empty) != expect {
 		t.Errorf("failed, expect: %s", expect)
 	}
 
 	kitty := "kitty"
 	expect = fmt.Sprintf("hello %s", kitty)
-	if hello(&kitty) != expect {
+	if Hello(&kitty) != expect {
 		t.Errorf("failed, expect: %s", expect)
 	}
 
 	eleven := 11
 	expect = fmt.Sprintf("hello number %d", eleven)
-	if helloInt(eleven) != expect {
+	if HelloInt(eleven) != expect {
 		t.Errorf("failed, expect: %s", expect)
 	}
 
@@ -45,7 +45,7 @@ func Test_hello_with_table(t *testing.T) {
 
 	for _, e := range helloEntries {
 		for i, a := range e.values {
-			r := hello(&a)
+			r := Hello(&a)
 			if r != e.expectedResults[i] {
 				t.Errorf("failed, %s; result: %s != expected: %s", e.msg, r, e.expectedResults[i])
 			}
