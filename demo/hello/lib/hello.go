@@ -1,4 +1,4 @@
-package hello
+package lib
 
 import (
 	"fmt"
@@ -7,15 +7,15 @@ import (
 
 func Hello(sr *string) (result string) {
 	if sr == nil || *sr == "" {
-		result = "hello world"
+		result = "lib world"
 	} else {
-		result = fmt.Sprintf("hello %s", *sr)
+		result = fmt.Sprintf("lib %s", *sr)
 	}
 	return
 }
 
 func HelloInt(n int) (result string) {
-	result = fmt.Sprintf("hello number %d", n)
+	result = fmt.Sprintf("lib number %d", n)
 	return
 }
 
