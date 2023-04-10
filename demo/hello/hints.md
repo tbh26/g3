@@ -5,7 +5,7 @@
 ```shell
 $ go run . there
 hello there
-$ go test . -v
+$ ( cd hello ; go test . -v )
 === RUN   Test_hello
 --- PASS: Test_hello (0.00s)
 === RUN   Test_hello_with_table
@@ -17,7 +17,7 @@ $
 
 ## demo with test coverage
 ```shell
-$ go test -cover . -v
+$ ( cd hello ; go test -cover . -v )
 === RUN   Test_hello
 --- PASS: Test_hello (0.00s)
 === RUN   Test_hello_with_table
@@ -29,7 +29,7 @@ $
 ```
 
 ```shell
-$ go test -coverprofile=coverage.out . 
+$ ( cd hello ; go test -coverprofile=coverage.out . )
 ok      hello   0.002s  coverage: 40.0% of statements
-$ go tool cover -html=coverage.out 
+$ ( cd hello ; go tool cover -html=coverage.out )
 ```
