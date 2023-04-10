@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"github.com/tbh26/g3/demo/hello"
 	"os"
 )
 
 func main() {
 	args := os.Args
 	if len(args) > 1 {
-		HelloLoop(args[1:])
+		hello.HelloLoop(args[1:])
 	} else {
-		fmt.Println(Hello(nil))
+		fmt.Println(hello.Hello(nil))
 	}
 }
